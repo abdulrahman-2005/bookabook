@@ -23,7 +23,7 @@ function CreateBookTemplate() {
                 <p >الترقيم الدولي: ${books[book]["ISBN"]}</p>
                 <p >عدد الصفحات: ${books[book]["pages"]}</p>
                 <a href="contributers/${by}.html" target="_blank"><span>${books[book]["by"]}</span></a>
-                غير متاح   <button >تشارك</button>
+                غير متاح   <button >بادل</button>
             </div>
         </div>`;
 		container.innerHTML += template;
