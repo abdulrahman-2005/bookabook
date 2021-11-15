@@ -100,7 +100,8 @@ input {
     scroll-behavior: smooth;
     top: 100px;
     background: silver;
-    border-top-right-radius: 2vw;
+    border-radius: 2vw;
+    border-top-right-radius: none;
     height: 83%;
     width: 100%;
     overflow-y: scroll;
@@ -116,18 +117,22 @@ input {
 
 .container::-webkit-scrollbar-track {
     background: black;
+    border-top-left-radius: 22vw;
+    border-bottom-left-radius: 22vw;
 }
 
 /* Handle */
 
 .container::-webkit-scrollbar-thumb {
     background: #888;
+    border-top-left-radius: 22vw;
+    border-bottom-left-radius: 22vw;
 }
 
 /* Handle on hover */
 
 .container::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: rgb(143, 143, 143);
 }
 
 .card {
