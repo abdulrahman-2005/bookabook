@@ -42,10 +42,10 @@ CreateBookTemplate();
 
 function search() {
 	query = searchBox.value;
-    container.innerHTML = "";
+	container.innerHTML = "";
 	Object.entries(books).forEach(([k]) => {
 		if (k.includes(query)) {
-            searchBox.style.border = "3px solid lightgreen"
+			searchBox.style.border = "3px solid lightgreen";
 			let by = people[books[k]["by"]];
 			container.innerHTML += `
                 <div class="card">
@@ -61,19 +61,17 @@ function search() {
                         غير متاح   <button >تشارك</button>
                     </div>
                 </div>`;
-		} 
-        if (container.innerHTML === "") {
-            searchBox.style.border = "3px solid red"
-            CreateBookTemplate()
-        }
-	})
+		}
+	});
+	if (container.innerHTML === "") {
+		searchBox.style.border = "3px solid red";
+		CreateBookTemplate();
+	}
 }
 searchButton.addEventListener("click", search);
-searchBox.addEventListener("click", () => {
-    searchBox.style.border = "3px solid yellow";
-})
-searchBox.addEventListener("keyup", (e) => {
-    if (e.key === "Enter") {
-        search()
-    }
-})
+searchBox.addEventListener("keyup", () => {
+	searchBox.style.border = "3px solid yellow";
+});
+searchBox.addEventListener("keyup", () => {
+	search();
+});
