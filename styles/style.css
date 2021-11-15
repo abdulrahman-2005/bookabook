@@ -1,0 +1,223 @@
+@font-face {
+    font-family: kufi;
+    src: url("../assets/ui/kufi.ttf");
+}
+
+:root {
+    --color: silver;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: kufi;
+    direction: "rtl"
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: var(--color);
+    padding: 10px;
+    overflow: hidden;
+}
+
+input {
+    margin-right: 2%;
+    font-size: 35px;
+    direction: "rtl";
+    background-color: silver;
+    outline: none;
+    border: 1px solid transparent;
+    border-top-right-radius: .5vw;
+    border-top-left-radius: .5vw;
+    padding-left: 1%;
+    padding-right: 1%;
+    transition: .4s;
+}
+
+.card span {
+    position: absolute;
+    font-size: 1.2vw;
+    padding-left: 5px;
+    padding-right: 20px;
+    width: 20%;
+    border-bottom-left-radius: 9vw;
+    border-top-right-radius: 10vw;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    color: lightgreen;
+    cursor: pointer;
+}
+
+.card span:hover {
+    background-color: green;
+}
+
+.nav {
+    position: absolute;
+    display: inline-flex;
+    justify-content: right;
+    font-size: 20px;
+    padding-top: 2%;
+    padding-right: 2%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    height: 100px;
+    width: 98%;
+}
+
+.nav p {
+    position: relative;
+    margin: 1%;
+}
+
+.nav button {
+    margin-right: 2%;
+    font-size: 25px;
+    background-color: silver;
+    outline: none;
+    border: 1px solid transparent;
+    border-top-right-radius: .5vw;
+    border-top-left-radius: .5vw;
+    padding-left: 1%;
+    padding-right: 1%;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.nav button:hover {
+    border: 23px solid black;
+    border-radius: 30px;
+}
+
+.container {
+    position: absolute;
+    scroll-behavior: smooth;
+    top: 100px;
+    background: silver;
+    border-top-right-radius: 2vw;
+    height: 83%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+/* width */
+
+.container::-webkit-scrollbar {
+    width: 30px;
+}
+
+/* Track */
+
+.container::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+
+.container::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card {
+    position: relative !important;
+    height: 350px;
+    width: 90%;
+    margin: 2%;
+    background-color: gray;
+    border-radius: 2vw;
+}
+
+.card img {
+    position: absolute;
+    right: 0;
+    background-size: cover;
+    height: 93%;
+    margin: 1%;
+    width: 19%;
+    border-radius: 2vw;
+    transition: .1s;
+}
+
+.card img:hover {
+    z-index: 10;
+    height: 95%;
+    width: 39%;
+}
+
+.card .info-container {
+    position: absolute;
+    text-align: right;
+    font-size: 3.5vh;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 2vw;
+    color: red;
+    width: 56%;
+    height: 86%;
+    background-color: rgb(58, 58, 58);
+}
+
+.info-container p {
+    margin: 1%;
+    color: white;
+}
+
+.info-container button {
+    font-size: 22px;
+    width: 49%;
+    height: 15%;
+    border-radius: 10vw;
+    outline: none;
+    border: none;
+    transition: .3s
+}
+
+.info-container button:hover {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+/*a pop up that views the descrebtion of the book*/
+
+.description-pop {
+    background-color: #fff;
+}
+
+.card .by {
+    background-color: red;
+}
+
+.control {
+    position: fixed;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 35px;
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(95, 95, 95);
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.control:hover {
+    color: black
+}
