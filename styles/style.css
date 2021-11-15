@@ -160,7 +160,7 @@ input {
 .card .info-container {
     position: absolute;
     text-align: right;
-    font-size: 3.5vh;
+    font-size: 1.5vw;
     margin: 1%;
     padding: 1%;
     border-radius: 2vw;
