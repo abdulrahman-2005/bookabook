@@ -11,7 +11,6 @@
     padding: 0;
     margin: 0;
     font-family: kufi;
-    direction: "rtl"
 }
 
 a {
@@ -20,13 +19,13 @@ a {
 
 body {
     background: var(--color);
-    padding: 10px;
     overflow: hidden;
 }
 
 input {
     margin-right: 2%;
-    font-size: 35px;
+    width: 20%;
+    font-size: 2.6vw;
     direction: "rtl";
     background-color: silver;
     outline: none;
@@ -40,7 +39,7 @@ input {
 
 .card span {
     position: absolute;
-    font-size: 1.2vw;
+    font-size: 1.3vw;
     padding-left: 5px;
     padding-right: 20px;
     width: 20%;
@@ -160,7 +159,6 @@ input {
 .card .info-container {
     position: absolute;
     text-align: right;
-    font-size: 1.5vw;
     margin: 1%;
     padding: 1%;
     border-radius: 2vw;
@@ -168,6 +166,22 @@ input {
     width: 56%;
     height: 86%;
     background-color: rgb(58, 58, 58);
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+
+@media screen and (min-width: 601px) {
+    .card .info-container {
+        font-size: 1.5vh;
+    }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+
+@media screen and (max-width: 600px) {
+    .card .info-container {
+        font-size: 3.7vw;
+    }
 }
 
 .info-container p {
@@ -189,35 +203,4 @@ input {
     background-color: black;
     color: white;
     font-weight: bold;
-}
-
-/*a pop up that views the descrebtion of the book*/
-
-.description-pop {
-    background-color: #fff;
-}
-
-.card .by {
-    background-color: red;
-}
-
-.control {
-    position: fixed;
-    display: flex;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    font-size: 35px;
-    text-align: center;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    color: rgb(95, 95, 95);
-    justify-content: center;
-    align-items: center;
-    transition: .5s;
-}
-
-.control:hover {
-    color: black
 }

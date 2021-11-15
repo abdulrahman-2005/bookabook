@@ -8,31 +8,36 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css" />
     <style>
-        .container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .card-view {
-            height: 90%;
-            width: 10%;
+        img {
+            height: 400px;
+            width: 28%;
             margin: 2%;
             background-color: gray;
             border-radius: 2vw;
+            transition: .5s;
+        }
+
+        img:hover {
+            height: 500px;
+            margin: 0;
+            width: 30%;
         }
     </style>
 </head>
 
 <body>
     <div class="nav"></div>
-    <div class="container">
-        <div class="card-view"></div>
-        <div class="card-view"></div>
-        <div class="card-view"></div>
-        <div class="card-view"></div>
-        <div class="card-view"></div>
-        <div class="card-view"></div>
-    </div>
+    <div class="container" id="con"><p></p></div>
+
+    <script src="JS/data.js"></script>
+    <script>
+        const container = document.getElementById("con")
+        container.innerHTML = ""
+        let image;
+        for (i in books) {
+            container.innerHTML += `<img src="./assets/front/${books[i]['title']}.jpg"></img>`;
+        }
+    </script>
 </body>
 
 </html>

@@ -40,34 +40,12 @@ function down() {
 
 CreateBookTemplate();
 
-// function search(query) {
-// 	if (books[query] !== undefined) {
-// 		let by = people[books[query]["by"]];
-// 		container.innerHTML = template = `
-//         <div class="card">
-//             <img src="assets/front/${books[query]["title"]}.jpg" alt="">
-//             <img src="assets/backward/${books[query]["title"]}.jpg" style="left: 59%" alt="">
-//             <div class="info-container">
-//                 <p >العنوان: ${books[query]["title"]}</p>
-//                 <p >المؤلف: ${books[query]["author"]}</p>
-//                 <p >دار النشر: ${books[query]["publisher"]}</p>
-//                 <p >الترقيم الدولي: ${books[query]["ISBN"]}</p>
-//                 <p >عدد الصفحات: ${books[query]["pages"]}</p>
-//                 <a href="contributers/${by}.html" target="_blank"><span>${books[book]["by"]}</span></a>
-//                 غير متاح   <button >تشارك</button>
-//             </div>
-//         </div>`;
-// 		console.log(template);
-// 	} else {
-// 		CreateBookTemplate();
-// 	}
-// }
-
 function search() {
 	query = searchBox.value;
     container.innerHTML = "";
 	Object.entries(books).forEach(([k]) => {
 		if (k.includes(query)) {
+            searchBox.style.border = "3px solid lightgreen"
 			let by = people[books[k]["by"]];
 			container.innerHTML += `
                 <div class="card">
@@ -83,11 +61,17 @@ function search() {
                         غير متاح   <button >تشارك</button>
                     </div>
                 </div>`;
-		}
+		} 
+        if (container.innerHTML === "") {
+            searchBox.style.border = "3px solid red"
+            CreateBookTemplate()
+        }
 	})
 }
-let query;
 searchButton.addEventListener("click", search);
+searchBox.addEventListener("click", () => {
+    searchBox.style.border = "3px solid yellow";
+})
 searchBox.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
         search()
