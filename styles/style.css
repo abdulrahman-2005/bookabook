@@ -42,25 +42,6 @@ input {
     transition: .4s;
 }
 
-.card span {
-    position: absolute;
-    font-size: 1.3vw;
-    padding-left: 5px;
-    padding-right: 20px;
-    width: 20%;
-    border-bottom-left-radius: 9vw;
-    border-top-right-radius: 10vw;
-    left: 0;
-    bottom: 0;
-    background-color: black;
-    color: lightgreen;
-    cursor: pointer;
-}
-
-.card span:hover {
-    background-color: green;
-}
-
 .nav {
     position: absolute;
     display: inline-flex;
@@ -114,19 +95,19 @@ input {
 
 /* width */
 
-.container::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 30px;
 }
 
 /* Track */
 
-.container::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: black;
 }
 
 /* Handle */
 
-.container::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: #888;
     border: 5px solid black;
     border-radius: 5vw;
@@ -135,7 +116,7 @@ input {
 
 /* Handle on hover */
 
-.container::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
     background: rgb(143, 143, 143);
 }
 
@@ -161,12 +142,12 @@ input {
 
 .card img:hover {
     z-index: 10;
-    height: 95%;
     width: 39%;
 }
 
 .card .info-container {
     position: absolute;
+    overflow-y: scroll;
     text-align: right;
     margin: 1%;
     padding: 1%;
@@ -177,11 +158,35 @@ input {
     background-color: rgb(58, 58, 58);
 }
 
+
+.card span {
+    position: absolute;
+    text-align: center;
+    font-size: 1.3vw;
+    padding-right: 2%;
+    padding-left: 6%;
+    border-bottom-left-radius: 7vw;
+    border-top-right-radius: 10vw;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(122, 119, 119, 0.575);
+    color: lightgreen;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card span:hover {
+    background-color: green;
+    padding-right: 6%;
+    padding-left: 2%;
+}
+
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 
 @media screen and (min-width: 601px) {
     .card .info-container {
-        font-size: 1.5vh;
+        /*font-size: 2.6vh;*/
+        font-size: 130%;
     }
 }
 
@@ -189,7 +194,8 @@ input {
 
 @media screen and (max-width: 600px) {
     .card .info-container {
-        font-size: 3.7vw;
+        font-size: 90%;
+        height: 91%;
     }
 }
 
