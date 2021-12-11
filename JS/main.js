@@ -99,25 +99,21 @@ function search() {
 			let by = people[books[k]["by"]];
 			container.innerHTML += `
 			<div class="card">
-				<img src="assets/front/${books[book]["title"]}.jpg" alt="">
-				<img src="assets/backward/${books[book]["title"]}.jpg" style="left: 59%" alt="">
-				<div class="info-container">
-					<p >العنوان: ${books[book]["title"]}</p>
-					<p >المؤلف: ${books[book]["author"]}</p>
-					<p >دار النشر: ${books[book]["publisher"]}</p>
-					<p >الترقيم الدولي: ${books[book]["ISBN"]}</p>
-					<p >عدد الصفحات: ${books[book]["pages"]}</p>
-					<button style="color: ${books[book]["availability"][1]};
-					${books[book]["availability"][1] == "green"
-					? "cursor: pointer;"
-					: ""}" ${books[book]["availability"][0] === "غير متاح"
-					? ""
-					: "onclick='ANA()'"}>بادل</button>
-				</div>
-				<a href="contributers/${by}.html" target="_blank"><span>${
-				books[book]["by"]
-			}</span></a>
-			</div>`;
+					<img src="assets/front/${books[book]["title"]}.jpg" alt="">
+					<img src="assets/backward/${books[book]["title"]}.jpg" style="left: 59%" alt="">
+					<div class="info-container">
+						<p >العنوان: ${books[book]["title"]}</p>
+						<p >المؤلف: ${books[book]["author"]}</p>
+						<p >دار النشر: ${books[book]["publisher"]}</p>
+						<p >الترقيم الدولي: ${books[book]["ISBN"]}</p>
+						<p >عدد الصفحات: ${books[book]["pages"]}</p>
+						<button style="color: ${books[book]["availability"][1]}; ${books[book]["availability"][1] == "green"? "cursor: pointer;" : ""}" 
+						${books[book]["availability"][0] == "غير متاح" ? "onclick='ANA()'": ""}>بادل</button>
+					</div>
+					<a href="contributers/${by}.html" target="_blank"><span>${
+					books[book]["by"]
+				}</span></a>
+				</div>`;
 		}
 	});
 	if (container.innerHTML === "") {
