@@ -114,15 +114,13 @@ input {
     
 }
 
-/* Handle on hover */
-
 *::-webkit-scrollbar-thumb:hover {
     background: rgb(143, 143, 143);
 }
 
 .card {
     position: relative !important;
-    height: 350px;
+    height: 60%;
     width: 90%;
     margin: 2%;
     background-color: gray;
@@ -176,7 +174,7 @@ input {
 }
 
 .card span:hover {
-    background-color: green;
+    background-color: black;
     padding-right: 6%;
     padding-left: 2%;
 }
@@ -218,4 +216,30 @@ input {
     background-color: black;
     color: white;
     font-weight: bold;
+}
+
+.search-pop {
+    direction: rtl;
+    position: fixed;
+    padding-right: 10%;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(32, 24, 24, 0.952);
+    color: silver;
+    z-index: -10;
+}
+
+.search-pop button {
+    font-size: 150%;
+    margin: 2%;
+    width: 90%;
+    background-color: grey;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+.search-pop button:hover {
+    font-weight: 900;
 }

@@ -7,23 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كتاب X كتاب</title>
     <link rel="stylesheet" href="styles/style.css" />
-    <link rel="shortcut icon" type="image/png" href="assets/ui/16.png" sizes="16x16"/>
-    <link rel="shortcut icon" type="image/png" href="assets/ui/32.png" sizes="32x32"/>
-    <link rel="shortcut icon" type="image/png" href="assets/ui/64.png" sizes="64x64"/>
-    <link rel="shortcut icon" type="image/png" href="assets/ui/128.png" sizes="128x128"/>
-    <link rel="shortcut icon" type="image/png" href="assets/ui/256.png" sizes="256x256"/>
-    <link rel="shortcut icon" type="image/png" href="assets/ui/512.png" sizes="512x512"/>
+    <link rel="shortcut icon" type="image/png" href="assets/ui/16.png" sizes="16x16" />
+    <link rel="shortcut icon" type="image/png" href="assets/ui/32.png" sizes="32x32" />
+    <link rel="shortcut icon" type="image/png" href="assets/ui/64.png" sizes="64x64" />
+    <link rel="shortcut icon" type="image/png" href="assets/ui/128.png" sizes="128x128" />
+    <link rel="shortcut icon" type="image/png" href="assets/ui/256.png" sizes="256x256" />
+    <link rel="shortcut icon" type="image/png" href="assets/ui/512.png" sizes="512x512" />
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .search-pop p {
+            position: relative;
+            font-size: 200%;
+        }
+        .search-pop button {
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body>
-    <button class="control" onclick="up()"
-        style="top: 129px; right: 40px; z-index: 100; background-color: #fff;">⇧</button>
-    <button class="control" onclick="down()" style="top: 199px; right: 40px; z-index: 100; background-color: #fff;">⇩
-    </button>
+    <div id="sPop"class="search-pop">
+        <button onclick="searchSet()" style="height: 50px; width: 50px;font-family: helvetica; background-color: white; border-radius: 5px;">X</button><p> اعدادت البحث</p>
+        <button id="title" onclick="searchSet('title')">🔍 ابحث عن عنوان</button>
+        <button id="author" onclick="searchSet('author')">🔍 ابحث عن مؤلف</button>
+        <button id="publisher" onclick="searchSet('publisher')" >🔍 ابحث عن ناشر</button>
+        <button id="pages" onclick="searchSet('pages')" >🔍 ابحث عن صفحات</button>
+        <button id="isbn" style="font-weight: normal;color: rgb(95, 13, 13); cursor: unset">X 🔍 ابحث عن ISBN</button>
+        <button id="by"  onclick="searchSet('by')">🔍 ابحث عن مشارك</button>
+    </div>
     <div class="nav" id="nav">
-        <button id="search">ابحث</button>
-        <input type="search" dir="rtl"name="" placeholder="ابحث عن كتاب" id="search-box">
+        <button onclick="searchSet()">البحث⚙️</button>
+        <input type="search" dir="rtl" name="" placeholder="ابحث عن كتاب" id="search-box">
         <button style="color: black;"><a href="gallery.html" target="_blank">المعرض</a></button>
         <p>كتاب X كتاب</p>
 
