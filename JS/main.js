@@ -40,8 +40,14 @@ function down() {
 
 CreateBookTemplate();
 
+function fixSearch(text) {
+	text = text.replace("أ", "ا");
+	return text;
+}
+
 function search() {
 	query = searchBox.value;
+	query = fixSearch(query)
 	container.innerHTML = "";
 	Object.entries(books).forEach(([k]) => {
 		if (k.includes(query)) {
@@ -68,6 +74,7 @@ function search() {
 		CreateBookTemplate();
 	}
 }
+
 searchButton.addEventListener("click", search);
 searchBox.addEventListener("keyup", () => {
 	searchBox.style.border = "3px solid yellow";
