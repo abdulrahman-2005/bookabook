@@ -1,8 +1,8 @@
 const container = document.getElementById("container");
-let searchBox = document.getElementById("search-box");
+const searchBox = document.getElementById("search-box");
 const searchButton = document.getElementById("search-settings");
-let template = ``;
 const pop = document.getElementById("sPop");
+let template = ``;
 let pointer = "";
 
 const choices = {
@@ -14,12 +14,12 @@ const choices = {
 	by: "مشارك",
 };
 
-let poped = 1;
+let poped = 0;
 let option = "title";
 function searchSet(choice = option) {
 	switch (poped) {
 		case 1:
-			pop.style.zIndex = `
+			pop.style = `
 			direction: rtl;
 			position: fixed;
 			padding-right: 10%;
@@ -34,7 +34,7 @@ function searchSet(choice = option) {
 			poped = 0;
 			break;
 		case 0:
-			pop.style.zIndex = `
+			pop.style = `
 			direction: rtl;
 			position: fixed;
 			padding-right: 10%;
@@ -64,6 +64,7 @@ function searchSet(choice = option) {
 }
 
 function CreateBookTemplate() {
+	searchBox.style.borderRadius = ".5vw"
 	let keys = [];
 	for (let key in books) {
 		keys.push(key);
@@ -82,12 +83,18 @@ function CreateBookTemplate() {
 					<p >دار النشر: ${books[book]["publisher"]}</p>
 					<p >الترقيم الدولي: ${books[book]["ISBN"]}</p>
 					<p >عدد الصفحات: ${books[book]["pages"]}</p>
-					<button style="color: ${books[book]["availability"][1]}; ${books[book]["availability"][1] == "green"? "cursor: pointer;" : ""}" 
-					${books[book]["availability"][0] == "غير متاح" ? "onclick='ANA()'": ""}>بادل</button>
+					<button style="color: ${books[book]["availability"][1]}; ${
+			books[book]["availability"][1] == "green" ? "cursor: pointer;" : ""
+		}" 
+					${
+						books[book]["availability"][0] == "غير متاح"
+							? "onclick='ANA()'"
+							: ""
+					}>بادل</button>
 				</div>
 				<a href="contributers/${by}.html" target="_blank"><span>${
-				books[book]["by"]
-			}</span></a>
+			books[book]["by"]
+		}</span></a>
 			</div>`;
 		container.innerHTML += template;
 	}
@@ -118,6 +125,9 @@ function condition(opt, th, q) {
 
 function search() {
 	query = searchBox.value;
+	if (searchBox.value === "") {
+		searchBox.style.borderRadius = ".5vw"
+	}
 	query = fixSearch(query);
 	container.innerHTML = "";
 	let thing;
@@ -136,12 +146,18 @@ function search() {
 						<p >دار النشر: ${books[k]["publisher"]}</p>
 						<p >الترقيم الدولي: ${books[k]["ISBN"]}</p>
 						<p >عدد الصفحات: ${books[k]["pages"]}</p>
-						<button style="color: ${books[k]["availability"][1]}; ${books[k]["availability"][1] == "green"? "cursor: pointer;" : ""}" 
-						${books[k]["availability"][0] == "غير متاح" ? "onclick='ANA()'": ""}>بادل</button>
+						<button style="color: ${books[k]["availability"][1]}; ${
+				books[k]["availability"][1] == "green" ? "cursor: pointer;" : ""
+			}" 
+						${
+							books[k]["availability"][0] == "غير متاح"
+								? "onclick='ANA()'"
+								: ""
+						}>بادل</button>
 					</div>
 					<a href="contributers/${by}.html" target="_blank"><span>${
-					books[book]["by"]
-				}</span></a>
+				books[book]["by"]
+			}</span></a>
 				</div>`;
 		}
 	});
@@ -153,9 +169,10 @@ function search() {
 
 searchBox.addEventListener("keyup", () => {
 	searchBox.style.border = "3px solid yellow";
+	searchBox.style.borderRadius = "3vw"
 	search();
 });
 
 function ANA() {
-	alert("هذا الكتاب غير متاح حاليا")
+	alert(" عذرا، الخدمة متوقفة حاليا");
 }
