@@ -1,245 +1,243 @@
 @font-face {
-    font-family: kufi;
-    src: url("../assets/ui/kufi.ttf");
+	font-family: kufi;
+	src: url("../assets/ui/kufi.ttf");
 }
 
 :root {
-    --color: silver;
+	--color: silver;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    font-family: kufi;
+	padding: 0;
+	margin: 0;
+	font-family: kufi;
 }
 
 a {
-    text-decoration: none;
-    color: Black;
+	text-decoration: none;
+	color: Black;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 body {
-    background: var(--color);
-    overflow: hidden;
+	background: var(--color);
+	overflow: hidden;
 }
 
 input {
-    margin-right: 2%;
-    width: 20%;
-    font-size: 2.6vw;
-    direction: "rtl";
-    background-color: silver;
-    outline: none;
-    border: 1px solid transparent;
-    border-top-right-radius: .5vw;
-    border-top-left-radius: .5vw;
-    padding-left: 1%;
-    padding-right: 1%;
-    transition: .4s;
+	margin-right: 2%;
+	width: 20%;
+	font-size: 2.6vw;
+	direction: "rtl";
+	background-color: silver;
+	outline: none;
+	border: 1px solid transparent;
+	border-top-right-radius: 0.5vw;
+	border-top-left-radius: 0.5vw;
+	padding-left: 1%;
+	padding-right: 1%;
+	transition: 0.4s;
 }
 
 .nav {
-    position: absolute;
-    display: inline-flex;
-    justify-content: right;
-    font-size: 20px;
-    padding-top: 2%;
-    padding-right: 2%;
-    top: 0;
-    left: 0;
-    background-color: black;
-    color: white;
-    height: 100px;
-    width: 98%;
+	position: absolute;
+	display: inline-flex;
+	justify-content: right;
+	font-size: 20px;
+	padding-top: 2%;
+	padding-right: 2%;
+	top: 0;
+	left: 0;
+	background-color: black;
+	color: white;
+	height: 100px;
+	width: 98%;
 }
 
 .nav p {
-    position: relative;
-    margin: 1%;
+	position: relative;
+	margin: 1%;
 }
 
 .nav button {
-    margin-right: 2%;
-    font-size: 25px;
-    background-color: silver;
-    outline: none;
-    border: 1px solid transparent;
-    border-top-right-radius: .5vw;
-    border-top-left-radius: .5vw;
-    padding-left: 1%;
-    padding-right: 1%;
-    transition: .4s;
-    cursor: pointer;
+	margin-right: 2%;
+	font-size: 25px;
+	background-color: silver;
+	outline: none;
+	border: 1px solid transparent;
+	border-top-right-radius: 0.5vw;
+	border-top-left-radius: 0.5vw;
+	padding-left: 1%;
+	padding-right: 1%;
+	transition: 0.4s;
+	cursor: pointer;
 }
 
 .nav button:hover {
-    border: 23px solid black;
-    border-radius: 30px;
+	border: 23px solid black;
+	border-radius: 30px;
 }
 
 .container {
-    position: absolute;
-    scroll-behavior: smooth;
-    top: 100px;
-    background: silver;
-    border-radius: 2vw;
-    border-top-right-radius: none;
-    height: 83%;
-    width: 100%;
-    overflow-y: scroll;
+	position: absolute;
+	scroll-behavior: smooth;
+	top: 100px;
+	background: silver;
+	border-radius: 2vw;
+	border-top-right-radius: none;
+	height: 83%;
+	width: 100%;
+	overflow-y: scroll;
 }
 
 /* width */
 
 *::-webkit-scrollbar {
-    width: 30px;
+	width: 30px;
 }
 
 /* Track */
 
 *::-webkit-scrollbar-track {
-    background: black;
+	background: black;
 }
 
 /* Handle */
 
 *::-webkit-scrollbar-thumb {
-    background: #888;
-    border: 5px solid black;
-    border-radius: 5vw;
-    
+	background: #888;
+	border: 5px solid black;
+	border-radius: 5vw;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background: rgb(143, 143, 143);
+	background: rgb(143, 143, 143);
 }
 
 .card {
-    position: relative !important;
-    height: 60%;
-    width: 90%;
-    margin: 2%;
-    background-color: gray;
-    border-radius: 2vw;
+	position: relative !important;
+	height: 60%;
+	width: 90%;
+	margin: 2%;
+	background-color: gray;
+	border-radius: 2vw;
 }
 
 .card img {
-    position: absolute;
-    right: 0;
-    background-size: cover;
-    height: 93%;
-    margin: 1%;
-    width: 19%;
-    border-radius: 2vw;
-    transition: .1s;
+	position: absolute;
+	right: 0;
+	background-size: cover;
+	height: 93%;
+	margin: 1%;
+	width: 19%;
+	border-radius: 2vw;
+	transition: 0.1s;
 }
 
 .card img:hover {
-    z-index: 10;
-    width: 39%;
+	z-index: 10;
+	width: 39%;
 }
 
 .card .info-container {
-    position: absolute;
-    overflow-y: scroll;
-    text-align: right;
-    margin: 1%;
-    padding: 1%;
-    border-radius: 2vw;
-    color: red;
-    width: 56%;
-    height: 86%;
-    background-color: rgb(58, 58, 58);
+	position: absolute;
+	overflow-y: scroll;
+	text-align: right;
+	margin: 1%;
+	padding: 1%;
+	border-radius: 2vw;
+	color: red;
+	width: 56%;
+	height: 86%;
+	background-color: rgb(58, 58, 58);
 }
 
-
 .card span {
-    position: absolute;
-    text-align: center;
-    font-size: 1.3vw;
-    padding-right: 2%;
-    padding-left: 6%;
-    border-bottom-left-radius: 7vw;
-    border-top-right-radius: 10vw;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(122, 119, 119, 0.575);
-    color: lightgreen;
-    cursor: pointer;
-    transition: .3s;
+	position: absolute;
+	text-align: center;
+	font-size: 1.3vw;
+	padding-right: 2%;
+	padding-left: 6%;
+	border-bottom-left-radius: 7vw;
+	border-top-right-radius: 10vw;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(122, 119, 119, 0.575);
+	color: lightgreen;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
 .card span:hover {
-    background-color: black;
-    padding-right: 6%;
-    padding-left: 2%;
+	background-color: black;
+	padding-right: 6%;
+	padding-left: 2%;
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 
 @media screen and (min-width: 601px) {
-    .card .info-container {
-        /*font-size: 2.6vh;*/
-        font-size: 130%;
-    }
+	.card .info-container {
+		/*font-size: 2.6vh;*/
+		font-size: 130%;
+	}
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 
 @media screen and (max-width: 600px) {
-    .card .info-container {
-        font-size: 90%;
-        height: 91%;
-    }
+	.card .info-container {
+		font-size: 90%;
+		height: 91%;
+	}
 }
 
 .info-container p {
-    margin: 1%;
-    color: white;
+	margin: 1%;
+	color: white;
 }
 
 .info-container button {
-    font-size: 22px;
-    width: 49%;
-    height: 15%;
-    border-radius: 10vw;
-    outline: none;
-    border: none;
-    transition: .3s
+	font-size: 22px;
+	width: 49%;
+	height: 15%;
+	border-radius: 10vw;
+	outline: none;
+	border: none;
+	transition: 0.3s;
 }
 
 .info-container button:hover {
-    background-color: black;
-    color: white;
-    font-weight: bold;
+	background-color: black;
+	color: white;
+	font-weight: bold;
 }
 
 .search-pop {
-    direction: rtl;
-    position: fixed;
-    padding-right: 10%;
-    top: 0px;
-    right: 0px;
-    height: 100%;
-    width: 50%;
-    background-color: rgba(32, 24, 24, 0.952);
-    color: silver;
-    z-index: -10;
+	direction: rtl;
+	position: fixed;
+	padding-right: 10%;
+	top: 0px;
+	right: 0px;
+	height: 1%;
+	width: 1%;
+	background-color: rgba(32, 24, 24, 0.952);
+	color: silver;
+	z-index: -10;
 }
 
 .search-pop button {
-    font-size: 150%;
-    margin: 2%;
-    width: 90%;
-    background-color: grey;
-    border-radius: 1vw;
-    cursor: pointer;
+	font-size: 150%;
+	margin: 2%;
+	width: 90%;
+	background-color: grey;
+	border-radius: 1vw;
+	cursor: pointer;
 }
 
 .search-pop button:hover {
-    font-weight: 900;
+	font-weight: 900;
 }

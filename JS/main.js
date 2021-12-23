@@ -5,7 +5,6 @@ let template = ``;
 const pop = document.getElementById("sPop");
 let pointer = "";
 
-let poped = 0;
 const choices = {
 	title: "عنوان",
 	author: "مؤلف",
@@ -15,15 +14,46 @@ const choices = {
 	by: "مشارك",
 };
 
+let poped = 1;
 let option = "title";
 function searchSet(choice = option) {
 	switch (poped) {
 		case 1:
-			pop.style.zIndex = "-10";
+			pop.style.zIndex = `
+			direction: rtl;
+			position: fixed;
+			padding-right: 10%;
+			top: 0px;
+			right: 0px;
+			height: 1%;
+			width: 1%;
+			background-color: rgba(32, 24, 24, 0.952);
+			color: silver;
+			z-index: -10;`;
+			pop.innerHTML = "";
 			poped = 0;
 			break;
 		case 0:
-			pop.style.zIndex = "10";
+			pop.style.zIndex = `
+			direction: rtl;
+			position: fixed;
+			padding-right: 10%;
+			top: 0px;
+			right: 0px;
+			height: 100%;
+			width: 50%;
+			background-color: rgba(32, 24, 24, 0.952);
+			color: silver;
+			z-index: 10;`;
+			pop.innerHTML = `
+			<button onclick="searchSet()" style="height: 50px; width: 50px;font-family: helvetica; background-color: white; border-radius: 5px;">X</button><p> اعدادت البحث</p>
+			<button id="title" onclick="searchSet('title')">🔍 ابحث عن عنوان</button>
+			<button id="author" onclick="searchSet('author')">🔍 ابحث عن مؤلف</button>
+			<button id="publisher" onclick="searchSet('publisher')" >🔍 ابحث عن ناشر</button>
+			<button id="pages" onclick="searchSet('pages')" >🔍 ابحث عن صفحات</button>
+			<button id="isbn" style="font-weight: normal;color: rgb(95, 13, 13); cursor: unset">X 🔍 ابحث عن ISBN</button>
+			<button id="by"  onclick="searchSet('by')">🔍 ابحث عن مشارك</button>
+		`;
 			poped = 1;
 			break;
 		default:
