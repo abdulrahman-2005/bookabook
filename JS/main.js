@@ -5,6 +5,8 @@ const pop = document.getElementById("sPop");
 let template = ``;
 let pointer = "";
 
+const colors = ["g", "o", "b", "p", "y"]
+
 const choices = {
 	title: "عنوان",
 	author: "مؤلف",
@@ -13,6 +15,13 @@ const choices = {
 	pages: "عدد صفحات",
 	by: "مشارك",
 };
+function random(mn, mx) { 
+	return Math.random() * (mx - mn) + mn; 
+} 
+function getRandomThing(things) {
+	return things[Math.floor(random(0, things.length))]
+}
+
 
 let poped = 0;
 let option = "title";
@@ -83,11 +92,11 @@ function CreateBookTemplate() {
                     <p><span class="label p">دار النشر</span> ${books[book]["publisher"]}</p>
                     <p><span class="label y">الترقيم الدولي</span> ${books[book]["ISBN"]}</p>
                     <p><span class="label g">عدد الصفحات</span> ${books[book]["pages"]}</p>
-					<button style="color: ${books[book]["availability"][1]}; ${
+					<button class="${getRandomThing(colors)}" style="color: ${books[book]["availability"][1]}; ${
                         books[book]["availability"][1] == "green" ? "cursor: pointer;" : ""}" 
                                 ${books[book]["availability"][0] == "غير متاح" ? "onclick='ANA()'" : "" }>بادل</button>
 				</div>
-			<a href="../contributers/${by}" target=_blank><span class="span">${books[book]["by"]}</span><a>
+			<a href="../contributers/${by}.html" target=_blank><span class="span">${books[book]["by"]}</span><a>
 			</div>`;
 		container.innerHTML += template;
 	}
@@ -134,12 +143,12 @@ function search() {
 			<img src="assets/front/${books[k]["title"]}.jpg" alt="" />
 			<img src="assets/backward/${books[k]["title"]}.jpg" style="left: 59%" alt=""/>
 			<div class="info-container">
-                    <p><span class="label o">العنوان</span>${books[k]["title"]}</p>
+			        <p><span class="label o">العنوان</span> ${books[k]["title"]}</p>
                     <p><span class="label b">المؤلف</span> ${books[k]["author"]}</p>
                     <p><span class="label p">دار النشر</span> ${books[k]["publisher"]}</p>
                     <p><span class="label y">الترقيم الدولي</span> ${books[k]["ISBN"]}</p>
                     <p><span class="label g">عدد الصفحات</span> ${books[k]["pages"]}</p>
-					<button style="color: ${books[k]["availability"][1]}; ${
+					<button class="${getRandomThing(colors)}" style="color: ${books[k]["availability"][1]}; ${
                         books[k]["availability"][1] == "green" ? "cursor: pointer;" : ""
                     }" 
                                 ${
@@ -148,7 +157,7 @@ function search() {
                                         : ""
                                 }>بادل</button>
 				</div>
-				<a href="../contributers/${by}" target=_blank><span class="span">${books[k]["by"]}</span><a>
+				<a href="../contributers/${by}.html" target=_blank><span class="span">${books[k]["by"]}</span><a>
 			</div>`;
 		}
 	});

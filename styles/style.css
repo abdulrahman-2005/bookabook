@@ -9,6 +9,11 @@
 	font-family: kufi;
 }
 
+*::selection {
+	background-color: silver;
+	color: black;
+}
+
 a {
 	text-decoration: none;
 	color: Black;
@@ -113,7 +118,7 @@ input {
 .card {
 	position: relative;
 	height: 60%;
-	width: 90%;
+	width: 95%;
 	margin: 2%;
 	background-color: gray;
 	border-radius: 2vw;
@@ -189,6 +194,9 @@ input {
 	.card .info-container {
 		font-size: 100%;
 	}
+	.info-container::-webkit-scrollbar {
+		width: 10px;
+	}
 }
 
 .info-container p {
@@ -208,12 +216,10 @@ input {
 	border-radius: .6vw;
 	outline: none;
 	border: none;
-	transition: 0.3s;
+	transition: .4s;
 }
 
 .info-container button:hover {
-	background-color: black;
-	color: white;
 	font-weight: bold;
 }
 
