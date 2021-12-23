@@ -124,8 +124,7 @@ const books = {
         pages: "188",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
-    },
-    
+    }
 }
 
 const people = {

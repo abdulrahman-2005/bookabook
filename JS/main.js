@@ -64,7 +64,7 @@ function searchSet(choice = option) {
 }
 
 function CreateBookTemplate() {
-	searchBox.style.borderRadius = ".5vw"
+	searchBox.style.borderRadius = ".5vw";
 	let keys = [];
 	for (let key in books) {
 		keys.push(key);
@@ -74,27 +74,20 @@ function CreateBookTemplate() {
 	for (book in books) {
 		let by = people[books[book]["by"]];
 		template = `
-        <div class="card">
-				<img src="assets/front/${books[book]["title"]}.jpg" alt="">
-				<img src="assets/backward/${books[book]["title"]}.jpg" style="left: 59%" alt="">
+		<div class="card">
+			<img src="assets/front/${books[book]["title"]}.jpg" alt="" />
+			<img src="assets/backward/${books[book]["title"]}.jpg" style="left: 59%" alt=""/>
 				<div class="info-container">
-					<p >العنوان: ${books[book]["title"]}</p>
-					<p >المؤلف: ${books[book]["author"]}</p>
-					<p >دار النشر: ${books[book]["publisher"]}</p>
-					<p >الترقيم الدولي: ${books[book]["ISBN"]}</p>
-					<p >عدد الصفحات: ${books[book]["pages"]}</p>
+                    <p class="top"><span class="label o">العنوان</span> ${books[book]["title"]}</p>
+                    <p><span class="label b">المؤلف</span> ${books[book]["author"]}</p>
+                    <p><span class="label p">دار النشر</span> ${books[book]["publisher"]}</p>
+                    <p><span class="label y">الترقيم الدولي</span> ${books[book]["ISBN"]}</p>
+                    <p><span class="label g">عدد الصفحات</span> ${books[book]["pages"]}</p>
 					<button style="color: ${books[book]["availability"][1]}; ${
-			books[book]["availability"][1] == "green" ? "cursor: pointer;" : ""
-		}" 
-					${
-						books[book]["availability"][0] == "غير متاح"
-							? "onclick='ANA()'"
-							: ""
-					}>بادل</button>
+                        books[book]["availability"][1] == "green" ? "cursor: pointer;" : ""}" 
+                                ${books[book]["availability"][0] == "غير متاح" ? "onclick='ANA()'" : "" }>بادل</button>
 				</div>
-				<a href="contributers/${by}.html" target="_blank"><span>${
-			books[book]["by"]
-		}</span></a>
+			<a href="../contributers/${by}" target=_blank><span class="span">${books[book]["by"]}</span><a>
 			</div>`;
 		container.innerHTML += template;
 	}
@@ -126,7 +119,7 @@ function condition(opt, th, q) {
 function search() {
 	query = searchBox.value;
 	if (searchBox.value === "") {
-		searchBox.style.borderRadius = ".5vw"
+		searchBox.style.borderRadius = ".5vw";
 	}
 	query = fixSearch(query);
 	container.innerHTML = "";
@@ -138,27 +131,25 @@ function search() {
 			let by = people[books[k]["by"]];
 			container.innerHTML += `
 			<div class="card">
-					<img src="assets/front/${books[k]["title"]}.jpg" alt="">
-					<img src="assets/backward/${books[k]["title"]}.jpg" style="left: 59%" alt="">
-					<div class="info-container">
-						<p >العنوان: ${books[k]["title"]}</p>
-						<p >المؤلف: ${books[k]["author"]}</p>
-						<p >دار النشر: ${books[k]["publisher"]}</p>
-						<p >الترقيم الدولي: ${books[k]["ISBN"]}</p>
-						<p >عدد الصفحات: ${books[k]["pages"]}</p>
-						<button style="color: ${books[k]["availability"][1]}; ${
-				books[k]["availability"][1] == "green" ? "cursor: pointer;" : ""
-			}" 
-						${
-							books[k]["availability"][0] == "غير متاح"
-								? "onclick='ANA()'"
-								: ""
-						}>بادل</button>
-					</div>
-					<a href="contributers/${by}.html" target="_blank"><span>${
-				books[book]["by"]
-			}</span></a>
-				</div>`;
+			<img src="assets/front/${books[k]["title"]}.jpg" alt="" />
+			<img src="assets/backward/${books[k]["title"]}.jpg" style="left: 59%" alt=""/>
+			<div class="info-container">
+                    <p><span class="label o">العنوان</span>${books[k]["title"]}</p>
+                    <p><span class="label b">المؤلف</span> ${books[k]["author"]}</p>
+                    <p><span class="label p">دار النشر</span> ${books[k]["publisher"]}</p>
+                    <p><span class="label y">الترقيم الدولي</span> ${books[k]["ISBN"]}</p>
+                    <p><span class="label g">عدد الصفحات</span> ${books[k]["pages"]}</p>
+					<button style="color: ${books[k]["availability"][1]}; ${
+                        books[k]["availability"][1] == "green" ? "cursor: pointer;" : ""
+                    }" 
+                                ${
+                                    books[k]["availability"][0] == "غير متاح"
+                                        ? "onclick='ANA()'"
+                                        : ""
+                                }>بادل</button>
+				</div>
+				<a href="../contributers/${by}" target=_blank><span class="span">${books[k]["by"]}</span><a>
+			</div>`;
 		}
 	});
 	if (container.innerHTML === "") {
@@ -169,7 +160,7 @@ function search() {
 
 searchBox.addEventListener("keyup", () => {
 	searchBox.style.border = "3px solid yellow";
-	searchBox.style.borderRadius = "3vw"
+	searchBox.style.borderRadius = "3vw";
 	search();
 });
 

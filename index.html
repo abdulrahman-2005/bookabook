@@ -1,43 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>كتاب X كتاب</title>
+		<link rel="stylesheet" href="styles/style.css" />
+		<link
+			rel="shortcut icon"
+			type="image/png"
+			href="assets/ui/16.png"
+			sizes="16x16"
+		/>
+		<link
+			rel="shortcut icon"
+			type="image/png"
+			href="assets/ui/32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="shortcut icon"
+			type="image/png"
+			href="assets/ui/64.png"
+			sizes="64x64"
+		/>
+		<link
+			rel="shortcut icon"
+			type="image/png"
+			href="assets/ui/128.png"
+			sizes="128x128"
+		/>
+		<link
+			rel="shortcut icon"
+			type="image/png"
+			href="assets/ui/256.png"
+			sizes="256x256"
+		/>
+		<link
+			rel="shortcut icon"
+			type="image/png"
+			href="assets/ui/512.png"
+			sizes="512x512"
+		/>
+		<link rel="stylesheet" href="styles/style.css" />
+		<style>
+			.search-pop p {
+				position: relative;
+				font-size: 200%;
+			}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كتاب X كتاب</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="shortcut icon" type="image/png" href="assets/ui/16.png" sizes="16x16" />
-    <link rel="shortcut icon" type="image/png" href="assets/ui/32.png" sizes="32x32" />
-    <link rel="shortcut icon" type="image/png" href="assets/ui/64.png" sizes="64x64" />
-    <link rel="shortcut icon" type="image/png" href="assets/ui/128.png" sizes="128x128" />
-    <link rel="shortcut icon" type="image/png" href="assets/ui/256.png" sizes="256x256" />
-    <link rel="shortcut icon" type="image/png" href="assets/ui/512.png" sizes="512x512" />
-    <link rel="stylesheet" href="styles/style.css">
-    <style>
-        .search-pop p {
-            position: relative;
-            font-size: 200%;
-        }
-        .search-pop button {
-            font-weight: 500;
-        }
-    </style>
-</head>
+			.search-pop button {
+				font-weight: 500;
+			}
+            
+		</style>
+	</head>
 
-<body>
-    <div id="sPop"class="search-pop"></div>
-    <div class="nav" id="nav">
-        <button onclick="searchSet()">البحث⚙️</button>
-        <input type="search" dir="rtl" name="" placeholder="ابحث عن كتاب" id="search-box">
-        <button style="color: black;"><a href="gallery.html" target="_blank">المعرض</a></button>
-        <p>كتاب X كتاب</p>
-
-    </div>
-    <div class="nav-right"></div>
-    <div class="container" id="container"></div>
-    <script src="JS/data.js"></script>
-    <script src="JS/main.js"></script>
-</body>
-
+	<body>
+		<div id="sPop" class="search-pop"></div>
+		<div class="nav" id="nav">
+			<button onclick="searchSet()">البحث⚙️</button>
+			<input
+				type="search"
+				dir="rtl"
+				name=""
+				placeholder="ابحث عن كتاب"
+				id="search-box"
+			/>
+			<button style="color: black">
+				<a href="gallery.html" target="_blank">المعرض</a>
+			</button>
+			<p>كتاب X كتاب</p>
+		</div>
+		<div class="container" id="container"></div>
+		<script src="JS/data.js"></script>
+        <script src="JS/main.js"></script>
+	</body>
 </html>
+
+<!-- <div class="card">
+    <img src="assets/front/افراح المقبرة.jpg" alt="" />
+    <img
+        src="assets/backward/افراح المقبرة.jpg"
+        style="left: 59%"
+        alt=""
+    />
+    <div class="info-container">
+        <p><span class="label o">العنوان</span> ${books[k]["title"]}</p>
+        <p><span class="label b">المؤلف</span> ${books[k]["author"]}</p>
+        <p><span class="label p">دار النشر</span> ${books[k]["publisher"]}</p>
+        <p><span class="label y">الترقيم الدولي</span> ${books[k]["ISBN"]}</p>
+        <p><span class="label g">عدد الصفحات</span> ${books[k]["pages"]}</p>
+        <button style="color: ${books[k]["availability"][1]}; ${
+            books[k]["availability"][1] == "green" ? "cursor: pointer;" : ""
+        }" 
+                    ${
+                        books[k]["availability"][0] == "غير متاح"
+                            ? "onclick='ANA()'"
+                            : ""
+                    }>بادل</button>
+    </div>
+</div> -->
