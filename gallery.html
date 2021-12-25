@@ -32,15 +32,18 @@
 </head>
 
 <body>
-    <div class="container" id="con" style="top:20px; height: 98%;"><p></p></div>
-
+    <div class="nav" style="color: white; height:50px">
+        <button style="height: 30px; font-size: 80%;"><a href="index.html">العودة</a></button>
+        <p>كتاب X كتاب</p>
+    </div>
+    <div class="container" id="con" style="top:50px; height: 98%; padding-top: 1%;"><p></p></div>
     <script src="JS/data.js"></script>
     <script>
         const container = document.getElementById("con")
         container.innerHTML = ""
         let image;
         for (i in books) {
-            container.innerHTML += `<a href="index.html"><img src="./assets/front/${books[i]['title']}.jpg"></img></a>`;
+            container.innerHTML += `<img src="./assets/front/${books[i]['title']}.jpg"></img>`;
         }
     </script>
 </body>

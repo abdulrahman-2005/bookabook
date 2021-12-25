@@ -11,7 +11,7 @@ const choices = {
 	title: "عنوان",
 	author: "مؤلف",
 	publisher: "ناشر",
-	isbn: "ISBN",
+	lang: "لغة",
 	pages: "عدد صفحات",
 	by: "مشارك",
 };
@@ -60,7 +60,7 @@ function searchSet(choice = option) {
 			<button id="author" onclick="searchSet('author')">🔍 ابحث عن مؤلف</button>
 			<button id="publisher" onclick="searchSet('publisher')" >🔍 ابحث عن ناشر</button>
 			<button id="pages" onclick="searchSet('pages')" >🔍 ابحث عن صفحات</button>
-			<button id="isbn" style="font-weight: normal;color: rgb(95, 13, 13); cursor: unset">X 🔍 ابحث عن ISBN</button>
+			<button id="lang" onclick="searchSet('lang')">X 🔍 ابحث عن لغة</button>
 			<button id="by"  onclick="searchSet('by')">🔍 ابحث عن مشارك</button>
 		`;
 			poped = 1;
@@ -90,10 +90,10 @@ function CreateBookTemplate() {
                     <p class="top"><span class="label o">العنوان</span> ${books[book]["title"]}</p>
                     <p><span class="label b">المؤلف</span> ${books[book]["author"]}</p>
                     <p><span class="label p">دار النشر</span> ${books[book]["publisher"]}</p>
-                    <p><span class="label y">الترقيم الدولي</span> ${books[book]["ISBN"]}</p>
+                    <p><span class="label y">اللغة</span> ${books[book]["lang"]}</p>
                     <p><span class="label g">عدد الصفحات</span> ${books[book]["pages"]}</p>
-					<button class="${getRandomThing(colors)}" style="color: ${books[book]["availability"][1]}; ${
-                        books[book]["availability"][1] == "green" ? "cursor: pointer;" : ""}" 
+					<button class="glow ${getRandomThing(colors)} " style="color: ${books[book]["availability"][1]}; ${
+                        books[book]["availability"][1] == "green" ? "cursor: pointer;" : ""}; " 
                                 ${books[book]["availability"][0] == "غير متاح" ? "onclick='ANA()'" : "" }>بادل</button>
 				</div>
 			<a href="../contributers/${by}.html" target=_blank><span class="span">${books[book]["by"]}</span><a>
@@ -134,31 +134,28 @@ function search() {
 	container.innerHTML = "";
 	let thing;
 	Object.entries(books).forEach(([k]) => {
-		thing = books[k][option];
+		book = k
+		thing = books[book][option]
 		if (condition(option, thing, query)) {
 			searchBox.style.border = "3px solid green";
 			let by = people[books[k]["by"]];
 			container.innerHTML += `
-			<div class="card">
-			<img src="assets/front/${books[k]["title"]}.jpg" alt="" />
-			<img src="assets/backward/${books[k]["title"]}.jpg" style="left: 59%" alt=""/>
+			
+		<div class="card">
+		<img src="assets/front/${books[book]["title"]}.jpg" alt="" />
+		<img src="assets/backward/${books[book]["title"]}.jpg" style="left: 59%" alt=""/>
 			<div class="info-container">
-			        <p><span class="label o">العنوان</span> ${books[k]["title"]}</p>
-                    <p><span class="label b">المؤلف</span> ${books[k]["author"]}</p>
-                    <p><span class="label p">دار النشر</span> ${books[k]["publisher"]}</p>
-                    <p><span class="label y">الترقيم الدولي</span> ${books[k]["ISBN"]}</p>
-                    <p><span class="label g">عدد الصفحات</span> ${books[k]["pages"]}</p>
-					<button class="${getRandomThing(colors)}" style="color: ${books[k]["availability"][1]}; ${
-                        books[k]["availability"][1] == "green" ? "cursor: pointer;" : ""
-                    }" 
-                                ${
-                                    books[k]["availability"][0] == "غير متاح"
-                                        ? "onclick='ANA()'"
-                                        : ""
-                                }>بادل</button>
-				</div>
-				<a href="../contributers/${by}.html" target=_blank><span class="span">${books[k]["by"]}</span><a>
-			</div>`;
+				<p class="top"><span class="label o">العنوان</span> ${books[book]["title"]}</p>
+				<p><span class="label b">المؤلف</span> ${books[book]["author"]}</p>
+				<p><span class="label p">دار النشر</span> ${books[book]["publisher"]}</p>
+				<p><span class="label y">اللغة</span> ${books[book]["lang"]}</p>
+				<p><span class="label g">عدد الصفحات</span> ${books[book]["pages"]}</p>
+				<button class="${getRandomThing(colors)}" style="color: ${books[book]["availability"][1]}; ${
+					books[book]["availability"][1] == "green" ? "cursor: pointer;" : ""}" 
+							${books[book]["availability"][0] == "غير متاح" ? "onclick='ANA()'" : "" }>بادل</button>
+			</div>
+		<a href="../contributers/${by}.html" target=_blank><span class="span">${books[book]["by"]}</span><a>
+		</div>`;
 		}
 	});
 	if (container.innerHTML === "") {

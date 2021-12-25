@@ -3,7 +3,7 @@ const books = {
         title: "الان نفتح الصندوق 2",
         author: "د. احمد خالد توفيق",
         publisher: "كيان كورب",
-        ISBN: "978-977-6386-03-7",
+        lang: "العربية",
         pages: "249",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -12,7 +12,7 @@ const books = {
         title: "الان افهم",
         author: "د. احمد خالد توفيق",
         publisher: "دار كتاب",
-        ISBN: "978-977-820-026-3",
+        lang: "العربية",
         pages: "145",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -21,7 +21,7 @@ const books = {
         title: "الهول",
         author: "د. احمد خالد توفيق",
         publisher: "دار الكرمة",
-        ISBN: "978-977-646-706-4",
+        lang: "العربية",
         pages: "247",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -30,7 +30,7 @@ const books = {
         title: "الان نفتح الصندوق 3",
         author: "د. احمد خالد توفيق",
         publisher: "كيان كورب",
-        ISBN: "978-977-6386-14-3",
+        lang: "العربية",
         pages: "177",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -39,7 +39,7 @@ const books = {
         title: "اللغز وراء السطور",
         author: "د. احمد خالد توفيق",
         publisher: "دار الشروق",
-        ISBN: "978-977-09-3395-4",
+        lang: "العربية",
         pages: "228",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -48,7 +48,7 @@ const books = {
         title: "مثل ايكاروس",
         author: "د. احمد خالد توفيق",
         publisher: "دار الشروق",
-        ISBN: "978-977-09-3332-2",
+        lang: "العربية",
         pages: "333",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -57,7 +57,7 @@ const books = {
         title: "فقاقيع",
         author: "د. احمد خالد توفيق",
         publisher: "دار كيان",
-        ISBN: "978-977-820-033-1",
+        lang: "العربية",
         pages: "215",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -66,7 +66,7 @@ const books = {
         title: "افراح المقبرة",
         author: "د. احمد خالد توفيق",
         publisher: "دار الكرمة",
-        ISBN: "؟؟",
+        lang: "العربية",
         pages: "236",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -75,7 +75,7 @@ const books = {
         title: "هادم الاساطير",
         author: "د. احمد خالد توفيق",
         publisher: "دار كيان",
-        ISBN: "978-977-820-024-9",
+        lang: "العربية",
         pages: "160",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -84,7 +84,7 @@ const books = {
         title: "ضحكات كئيبة",
         author: "د. احمد خالد توفيق",
         publisher: "دار كيان",
-        ISBN: "978-977-820-062-1",
+        lang: "العربية",
         pages: "246",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -93,7 +93,7 @@ const books = {
         title: "سر الغرفة 207",
         author: "د. احمد خالد توفيق",
         publisher: "دار كيان",
-        ISBN: "978-977-820-027-0",
+        lang: "العربية",
         pages: "217",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -102,7 +102,7 @@ const books = {
         title: "E.S.P",
         author: "د. احمد خالد توفيق",
         publisher: "كيان كورب",
-        ISBN: "978-977-6386-00-6",
+        lang: "العربية",
         pages: "267",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -111,7 +111,7 @@ const books = {
         title: "الان نفتح الصندوق 1",
         author: "د. احمد خالد توفيق",
         publisher: "كيان كورب",
-        ISBN: "978-977-6386-02-0",
+        lang: "العربية",
         pages: "286",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
@@ -120,7 +120,7 @@ const books = {
         title: "موسوعة الظلام",
         author: "د. احمد خالد توفيق",
         publisher: "دار كيان",
-        ISBN: "978-977-820-022-5",
+        lang: "العربية",
         pages: "188",
         by: "عبدالرحمن عزمي",
         availability: ["غير متاح", "red"]
