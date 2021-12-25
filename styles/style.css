@@ -205,8 +205,6 @@ input {
 	margin: 1%;
 	color: white;
 	background: rgba(253, 253, 253, 0.054);
-	border-top-right-radius: 10vw;
-	border-bottom-right-radius: 10vw;
 	transition: 1s;
 }
 
@@ -214,6 +212,10 @@ input {
 	background: linear-gradient(to right, rgb(41, 40, 40), rgb(71, 71, 71));
 	font-weight: bold;
 	padding-right: 10%;
+}
+
+.info-container p:hover * {
+	border-radius: 10vw;
 }
 
 .info-container button {
@@ -264,10 +266,13 @@ input {
 	text-align: center;
 	padding-right: 2%;
 	padding-left: 2%;
-	border-radius: 10vw;
+	border-top-left-radius: 10vw;
+	border-bottom-left-radius: 10vw;
 	color: black;
 	font-weight: bold;
+	transition: .3s
 }
+
 
 .y {
 	background-color: rgb(200, 255, 0);
